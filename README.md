@@ -116,7 +116,7 @@ Express를 사용하지 않으므로 직접 정적 파일을 읽는 부분을 �
 
 ### 로그인 페이지
 
-![login](./img/login.png)
+![login](https://github.com/dev-dongwon/nodejs-todo/blob/dev-dongwon/img/login.png?raw=true)
 
 
 
@@ -131,7 +131,7 @@ Express를 사용하지 않으므로 직접 정적 파일을 읽는 부분을 �
 
 ### 회원가입 페이지
 
-![join](./img/join.png)
+![join](https://github.com/dev-dongwon/nodejs-todo/blob/dev-dongwon/img/join.png?raw=true)
 
 
 
@@ -166,7 +166,7 @@ Express를 사용하지 않으므로 직접 정적 파일을 읽는 부분을 �
 
 ### 로비 페이지
 
-![lobby](./img/lobby.png)
+![lobby](https://github.com/dev-dongwon/nodejs-todo/blob/dev-dongwon/img/lobby.png?raw=true)
 
 1. welcome message. ID와 함께 노출.
 2. 게임 만들기 페이지로 이동
@@ -187,7 +187,7 @@ Express를 사용하지 않으므로 직접 정적 파일을 읽는 부분을 �
 
 ### 새로운 게임 만들기 페이지
 
-![create_room](./img/create.png)
+![create_room](https://github.com/dev-dongwon/nodejs-todo/blob/dev-dongwon/img/create.png?raw=true)
 
 1. 방제 입력창
    1. 방제 입력 조건은 1자 이상, 25자 이하로 제한한다
@@ -200,7 +200,7 @@ Express를 사용하지 않으므로 직접 정적 파일을 읽는 부분을 �
 
 ### 게임 대기 화면
 
-![waitingGame](./img/waitingGame.png)
+![waitingGame](https://github.com/dev-dongwon/nodejs-todo/blob/dev-dongwon/img/waitingGame.png?raw=true)
 
 1. 게임 대기 화면 메시지
 2. 채팅 화면. 굵은 폰트로 id가 표시되고, 밑에 해당 id가 입력한 메시지가 표시된다
@@ -214,9 +214,9 @@ Express를 사용하지 않으므로 직접 정적 파일을 읽는 부분을 �
 
 ### 게임 로딩 페이지
 
-![loading](./img/loading1.png)
+![loading](https://github.com/dev-dongwon/nodejs-todo/blob/dev-dongwon/img/loading1.png?raw=true)
 
-![loading2](./img/loading2.png)
+![loading2](https://github.com/dev-dongwon/nodejs-todo/blob/dev-dongwon/img/loading2.png?raw=true)
 
 - 게임 시작하기 버튼을 누른 후 처음 5초 간 게임 참여자의 직업을 설정하는 동안 로딩 페이지가 노출
 
@@ -226,7 +226,7 @@ Express를 사용하지 않으므로 직접 정적 파일을 읽는 부분을 �
 
 ### inGame 페이지 1 - 낮 : #마을 회의실
 
-![inGame 낮](./img/inGame1.png)
+![inGame 낮](https://github.com/dev-dongwon/nodejs-todo/blob/dev-dongwon/img/inGame1.png?raw=true)
 
 
 
@@ -252,19 +252,19 @@ Express를 사용하지 않으므로 직접 정적 파일을 읽는 부분을 �
 
 ### inGame 페이지 2 - 저녁 : #마을 투표함
 
-![vote](./img/inGame2Vote.png)
+![vote](https://github.com/dev-dongwon/nodejs-todo/blob/dev-dongwon/img/inGame2Vote.png?raw=true)
 
 
 
 ### inGame 페이지 3 - 밤 : # 교수대 앞
 
-![inGame3Night](./img/inGame3Night.png)
+![inGame3Night](https://github.com/dev-dongwon/nodejs-todo/blob/dev-dongwon/img/inGame3Night.png?raw=true)
 
 
 
 ### inGame 페이지4 - 새벽 : 마피아 은신처
 
-![inGame4Midnight](./img/inGame4Midnight.png)
+![inGame4Midnight](https://github.com/dev-dongwon/nodejs-todo/blob/dev-dongwon/img/inGame4MIdnight.png?raw=true)
 
 - 직업이 '마피아'인 캐릭터만 참여 가능한 채팅창 활성화
 - 마피아 투표를 통해 '사망' 상태로 만들 캐릭터 선택
@@ -274,25 +274,25 @@ Express를 사용하지 않으므로 직접 정적 파일을 읽는 부분을 �
 
 ### inGame 페이지5 - 새벽 : 캐릭터 스킬 발동
 
-![inGame5Skill](./img/inGame5Skill.png)
+![inGame5Skill](https://github.com/dev-dongwon/nodejs-todo/blob/dev-dongwon/img/inGame5Skill.png?raw=true)
 
 
 
 ### inGame 페이지6 - 새벽 : 사망 이벤트
 
-![사망이벤트](./img/inGame6DieEvent.png)
+![사망이벤트](https://github.com/dev-dongwon/nodejs-todo/blob/dev-dongwon/img/inGame6DieEvent.png?raw=true)
 
 
 
 ### inGame 페이지7 - 결과 정리
 
-![result](./img/inGame7Result.png)
+![result](https://github.com/dev-dongwon/nodejs-todo/blob/dev-dongwon/img/inGame7Result.png?raw=true)
 
 
 
 ### inGame 페이지8 - 엔딩 페이지
 
-![ending](./img/inGame8Ending.png)
+![ending](https://github.com/dev-dongwon/nodejs-todo/blob/dev-dongwon/img/inGame8Ending.png?raw=true)
 
 
 
@@ -302,7 +302,7 @@ Express를 사용하지 않으므로 직접 정적 파일을 읽는 부분을 �
 
 ## 게임 내 클래스 구조
 
-![uml](./img/uml.png)
+![uml](https://github.com/dev-dongwon/nodejs-todo/blob/dev-dongwon/img/uml.png?raw=true)
 
 
 
