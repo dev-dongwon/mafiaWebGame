@@ -116,7 +116,7 @@ Express를 사용하지 않으므로 직접 정적 파일을 읽는 부분을 �
 
 ### 로그인 페이지
 
-![login](https://github.com/dev-dongwon/nodejs-todo/blob/dev-dongwon/img/login.png?raw=true)
+![login](https://user-images.githubusercontent.com/43179397/58751336-1fa1a380-84d8-11e9-8e15-71d892c5deb6.png)
 
 
 
@@ -131,7 +131,7 @@ Express를 사용하지 않으므로 직접 정적 파일을 읽는 부분을 �
 
 ### 회원가입 페이지
 
-![join](https://github.com/dev-dongwon/nodejs-todo/blob/dev-dongwon/img/join.png?raw=true)
+![join](https://user-images.githubusercontent.com/43179397/58751332-1f090d00-84d8-11e9-993f-2f14bf53c9a8.png)
 
 
 
@@ -166,7 +166,7 @@ Express를 사용하지 않으므로 직접 정적 파일을 읽는 부분을 �
 
 ### 로비 페이지
 
-![lobby](https://github.com/dev-dongwon/nodejs-todo/blob/dev-dongwon/img/lobby.png?raw=true)
+![lobby](https://user-images.githubusercontent.com/43179397/58751335-1fa1a380-84d8-11e9-9849-3958c4fe1add.png)
 
 1. welcome message. ID와 함께 노출.
 2. 게임 만들기 페이지로 이동
@@ -187,7 +187,7 @@ Express를 사용하지 않으므로 직접 정적 파일을 읽는 부분을 �
 
 ### 새로운 게임 만들기 페이지
 
-![create_room](https://github.com/dev-dongwon/nodejs-todo/blob/dev-dongwon/img/create.png?raw=true)
+![create](https://user-images.githubusercontent.com/43179397/58751322-1dd7e000-84d8-11e9-95f4-013385f7f79c.png)
 
 1. 방제 입력창
    1. 방제 입력 조건은 1자 이상, 25자 이하로 제한한다
@@ -200,7 +200,7 @@ Express를 사용하지 않으므로 직접 정적 파일을 읽는 부분을 �
 
 ### 게임 대기 화면
 
-![waitingGame](https://github.com/dev-dongwon/nodejs-todo/blob/dev-dongwon/img/waitingGame.png?raw=true)
+![waitingGame](https://user-images.githubusercontent.com/43179397/58751338-203a3a00-84d8-11e9-9e57-9aed6c5413e2.png)
 
 1. 게임 대기 화면 메시지
 2. 채팅 화면. 굵은 폰트로 id가 표시되고, 밑에 해당 id가 입력한 메시지가 표시된다
@@ -214,9 +214,9 @@ Express를 사용하지 않으므로 직접 정적 파일을 읽는 부분을 �
 
 ### 게임 로딩 페이지
 
-![loading](https://github.com/dev-dongwon/nodejs-todo/blob/dev-dongwon/img/loading1.png?raw=true)
+![loading1](https://user-images.githubusercontent.com/43179397/58751333-1fa1a380-84d8-11e9-9a83-2ff24f98040f.png)
 
-![loading2](https://github.com/dev-dongwon/nodejs-todo/blob/dev-dongwon/img/loading2.png?raw=true)
+![loading2](https://user-images.githubusercontent.com/43179397/58751334-1fa1a380-84d8-11e9-8da9-1f1cc0d1f7b1.png)
 
 - 게임 시작하기 버튼을 누른 후 처음 5초 간 게임 참여자의 직업을 설정하는 동안 로딩 페이지가 노출
 
@@ -226,7 +226,7 @@ Express를 사용하지 않으므로 직접 정적 파일을 읽는 부분을 �
 
 ### inGame 페이지 1 - 낮 : #마을 회의실
 
-![inGame 낮](https://github.com/dev-dongwon/nodejs-todo/blob/dev-dongwon/img/inGame1.png?raw=true)
+![inGame1](https://user-images.githubusercontent.com/43179397/58751323-1dd7e000-84d8-11e9-89c4-f0c130edbc16.png)
 
 
 
@@ -252,19 +252,19 @@ Express를 사용하지 않으므로 직접 정적 파일을 읽는 부분을 �
 
 ### inGame 페이지 2 - 저녁 : #마을 투표함
 
-![vote](https://github.com/dev-dongwon/nodejs-todo/blob/dev-dongwon/img/inGame2Vote.png?raw=true)
+![inGame2Vote](https://user-images.githubusercontent.com/43179397/58751324-1dd7e000-84d8-11e9-95f9-ed94b25ab184.png)
 
 
 
 ### inGame 페이지 3 - 밤 : # 교수대 앞
 
-![inGame3Night](https://github.com/dev-dongwon/nodejs-todo/blob/dev-dongwon/img/inGame3Night.png?raw=true)
+![inGame3Night](https://user-images.githubusercontent.com/43179397/58751326-1e707680-84d8-11e9-92c6-16bb0908f88c.png)
 
 
 
 ### inGame 페이지4 - 새벽 : 마피아 은신처
 
-![inGame4Midnight](https://github.com/dev-dongwon/nodejs-todo/blob/dev-dongwon/img/inGame4MIdnight.png?raw=true)
+![inGame4MIdnight](https://user-images.githubusercontent.com/43179397/58751327-1e707680-84d8-11e9-9881-6fbdfbe1573f.png)
 
 - 직업이 '마피아'인 캐릭터만 참여 가능한 채팅창 활성화
 - 마피아 투표를 통해 '사망' 상태로 만들 캐릭터 선택
@@ -274,25 +274,25 @@ Express를 사용하지 않으므로 직접 정적 파일을 읽는 부분을 �
 
 ### inGame 페이지5 - 새벽 : 캐릭터 스킬 발동
 
-![inGame5Skill](https://github.com/dev-dongwon/nodejs-todo/blob/dev-dongwon/img/inGame5Skill.png?raw=true)
+![inGame5Skill](https://user-images.githubusercontent.com/43179397/58751328-1e707680-84d8-11e9-9ac3-12507d2554cc.png)
 
 
 
 ### inGame 페이지6 - 새벽 : 사망 이벤트
 
-![사망이벤트](https://github.com/dev-dongwon/nodejs-todo/blob/dev-dongwon/img/inGame6DieEvent.png?raw=true)
+![inGame6DieEvent](https://user-images.githubusercontent.com/43179397/58751329-1f090d00-84d8-11e9-8892-038fe0e0f1c1.png)
 
 
 
 ### inGame 페이지7 - 결과 정리
 
-![result](https://github.com/dev-dongwon/nodejs-todo/blob/dev-dongwon/img/inGame7Result.png?raw=true)
+![inGame7Result](https://user-images.githubusercontent.com/43179397/58751330-1f090d00-84d8-11e9-9e73-63a3c8c57a98.png)
 
 
 
 ### inGame 페이지8 - 엔딩 페이지
 
-![ending](https://github.com/dev-dongwon/nodejs-todo/blob/dev-dongwon/img/inGame8Ending.png?raw=true)
+![inGame8Ending](https://user-images.githubusercontent.com/43179397/58751331-1f090d00-84d8-11e9-9a80-80c10ac0cbaa.png)
 
 
 
@@ -300,9 +300,15 @@ Express를 사용하지 않으므로 직접 정적 파일을 읽는 부분을 �
 
 # 설계
 
+## 전체 애플리케이션 구조
+
+![dataFlow](https://user-images.githubusercontent.com/43179397/58751457-8a9faa00-84d9-11e9-8f4a-b79c3708798d.png)
+
+
+
 ## 게임 내 클래스 구조
 
-![uml](https://github.com/dev-dongwon/nodejs-todo/blob/dev-dongwon/img/uml.png?raw=true)
+![uml](https://user-images.githubusercontent.com/43179397/58751337-203a3a00-84d8-11e9-89ae-aa14553c1e87.png)
 
 
 
