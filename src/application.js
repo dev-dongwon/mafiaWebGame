@@ -12,6 +12,10 @@ const Application = class {
   listen(port = 3000, host = 'localhost', func) {
     this.server.listen(port, host, func);
   }
+
+  use(func) {
+    this.middleware.add(func);
+  }
 }
 
 module.exports = Application;
