@@ -1,0 +1,22 @@
+#title {
+    color: red;
+    text-align: center;
+    font-weight: 800;
+    margin: 10% 0px 10% 0px;
+}
+
+#form-box {
+    margin-top: 13%;
+}
+
+.form-label-group {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#join-link {
+    margin-top: 5%;
+    text-align: right;
+    color: red;
+    text-decoration: underline;
+}
