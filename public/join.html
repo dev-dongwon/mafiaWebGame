@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<!-- 부트스트랩 CDN 적용-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+<!--페이지 css-->
+<link rel="stylesheet" href="./css/common.css">
+<link rel="stylesheet" href="./css/join.css">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAFIA :: 회원가입</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-6 col-xs-offset-3" id="form-box">
+        <div>
+          <h1 id="title">JOIN</h1>
+        </div>
+        <form action="/member" class="form-signin" method="POST">
+          <div class="form-label-group">
+            <label for="inputName">Nickname</label>
+            <input type="text" id="inputName" name='nickname' class="form-control" placeholder="닉네임을 입력하세요" required
+              autofocus>
+          </div>
+
+          <div class="form-label-group">
+            <label for="inputEmail">ID</label>
+            <input type="text" id="inputId" name='id' class="form-control" placeholder="id를 입력하세요" required autofocus>
+          </div>
+
+          <div class="form-label-group">
+            <label for="inputPassword">Password</label>
+            <input type="password" id="inputPassword" name='password' class="form-control" placeholder="Password를 입력하세요"
+              required>
+          </div>
+          <label for="checkPassword">Password 확인</label>
+          <input type="password" id="checkPassword" name='checkPassword' class="form-control" placeholder="Password를 한 번 더 입력해주세요" required>
+          <hr>
+          <button class="btn btn-lg btn-block text-uppercase btn-custom" type="submit">회원가입</button>
+        </form>
+        <a href="/">
+          <p id="join-link">돌아가기</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+
+<!--bootstrap js-->
+<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+</html>
