@@ -13,7 +13,14 @@ const Application = class {
     this.server.listen(port, host, func);
   }
 
-  use(func) {
+  use(path, func) {
+    if (typeof path === 'string' && typeof func === 'function') {
+      func.path = path;
+    } else if (typeof path === 'function'){
+      func = path;
+    } else {
+      console.error('use(func) 혹은 use(path, func)를 써주세요');
+    }
     this.middleware.add(func);
   }
 }
