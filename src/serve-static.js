@@ -1,7 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 
-const serveStatic = (req, res) => {
+const serveStatic = () => (req, res, next) => {
   const mimeType = {
     '.ico': 'image/x-icon',
     '.html': 'text/html',
@@ -28,7 +28,7 @@ const serveStatic = (req, res) => {
       }
     })
   } else {
-    res.statusCode = 200;
+    next();
   }
 };
 
