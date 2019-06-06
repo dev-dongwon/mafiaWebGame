@@ -1,41 +1,41 @@
-const middleware = () => {
-  const middlewareArr = [];
+const Middleware = class {
+  constructor() {
+    this.middlewares = [];
+    this.req = null
+    this.res = null;
+  }
 
-  const add = (func) => {
-    middlewareArr.push(func);
-  };
+  add(fn) {
+    this.middlewares.push(fn)
+  }
 
-  const run = (request, response) => {
-    req = request;
-    res = response;
-    runMiddleware(0);
-  };
+  run(req, res) {
+    this.req = req;
+    this.res = res;
+    this.runMiddleware(0);
+  }
 
-  const isErrorMiddleware = (middleware) => {
+  isErrorMiddleware(middleware) {
     return middleware.length === 4;
-  };
+  }
 
-  const getNextMiddleware = (index) => {
-    if (index < 0 || index >= middlewareArr.length) return;
-    return middlewareArr[index];
-  };
+  getNextMiddleware(index) {
+    if (index < 0 || index >= this.middlewares.length) return;
+    return this.middlewares[index];
+  }
 
-  const runMiddleware = (index, err) => {
-    const nextMiddleware = getNextMiddleware(index);
-    const next = (err) => runMiddleware(index + 1, err);
+  runMiddleware(index, err) {
+    const nextMiddleware = this.getNextMiddleware(index);
+    const next = (err) => this.runMiddleware(index + 1, err)
 
     if (err) {
-      return isErrorMiddleware(nextMiddleware) ? nextMiddleware(err, req, res, next) : runMiddleware(index + 1, err)
+      if (this.isErrorMiddleware(nextMiddleware)) {
+        nextMiddleware(err, this.req, this.res, next);
+      }
+      this.runMiddleware(index + 1, err);
     }
-
-    nextMiddleware(req, res, next);
-  };
-
-  return {
-    middlewareArr,
-    run,
-    add,
+    nextMiddleware(this.req, this.res, next);
   }
 }
 
-module.exports = middleware;
+module.exports = Middleware;
