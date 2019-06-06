@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<!-- 부트스트랩 CDN 적용-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+<!--페이지 css-->
+<link rel="stylesheet" href="./css/common.css">
+<link rel="stylesheet" href="./css/index.css">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAFIA :: LOGIN</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-6 col-xs-offset-3" id="login-box">
+        <div>
+          <h1 id="title">WELCOME TO MAFIA</h1>
+        </div>
+        <form action="/login" class="form-signin" method="POST">
+          <div class="form-label-group">
+            <label for="inputId">ID</label>
+            <input type="text" id="inputId" name='id' class="form-control" placeholder="id를 입력하세요" required autofocus>
+          </div>
+
+          <div class="form-label-group">
+            <label for="inputPassword">Password</label>
+            <input type="password" id="inputPassword" name='password' class="form-control" placeholder="Password를 입력하세요"
+              required>
+          </div>
+          <hr>
+          <button class="btn btn-lg btn-block text-uppercase btn-custom" type="submit">LOGIN</button>
+          <a href="/join">
+            <p id="join-link">회원가입</p>
+          </a>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+<!--bootstrap js-->
+<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+</html>

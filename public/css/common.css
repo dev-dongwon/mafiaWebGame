@@ -1,0 +1,12 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+body {
+    font-family: "Nanum Gothic", sans-serif;
+    background-color: black;
+    color: aliceblue;
+}
+
+.btn-custom {
+    color: white;
+    background-color: red;
+}
