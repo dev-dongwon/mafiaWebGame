@@ -1,7 +1,7 @@
-const server = require('../server');
+const app = require('../app');
 const host = 'localhost';
 const port = 3000;
 
-server.listen(port, host, () => {
+app.listen(port, host, () => {
   console.log(`server running at http://${host}:${port}`);
 });
