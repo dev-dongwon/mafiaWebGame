@@ -3,7 +3,7 @@ const Middleware = require('./middleware');
 
 const Application = class {
   constructor() {
-    this.middleware = Middleware();
+    this.middleware = new Middleware();
     this.server = http.createServer((req, res) => {
       this.middleware.run(req, res);
     })
