@@ -2,7 +2,7 @@ const App = require('./src/application');
 const debug = require('./utils/debug')('app');
 const path = require('path');
 const fs = require('fs');
-const serveStatic = require('./src/serve-static');
+const serveStatic = require('./middlewares/serve-static');
 const app = new App();
 
 const index = (req, res, next) => {
