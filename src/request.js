@@ -8,16 +8,15 @@ const requestObj = {
     },{});
   },
 
-  getPath(req) {
-    const fullUrlArr = req.url.split('?');
+  getPath(fullUrlArr) {
     const path = fullUrlArr[0] || '/';
     return path;
   },
   
   request(req){
     if (!req) throw Error('request is required')
-    const path = requestObj.getPath(req);
-    req.path = req.path || path;
+    const fullUrlArr = req.url.split('?');
+    req.path = req.path || requestObj.getPath(req);
 
     if (fullUrlArr.length === 1) return req;
   
