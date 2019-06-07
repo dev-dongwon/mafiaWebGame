@@ -1,46 +1,45 @@
-const Middleware = class {
-  constructor() {
-    this.middlewares = [];
-    this.req = null
-    this.res = null;
+const middleware = () => {
+  const middlewares = [];
+  let request = null;
+  let response = null;
+
+  const add = (func) => {
+    middlewares.push(func)
   }
 
-  add(fn) {
-    this.middlewares.push(fn)
+  const run = (req, res) => {
+    request = req;
+    response = res;
+    runMiddleWare(0);
   }
 
-  run(req, res) {
-    this.req = req;
-    this.res = res;
-    this.runMiddleware(0);
-  }
-
-  isErrorMiddleware(middleware) {
-    return middleware.length === 4;
-  }
-
-  getNextMiddleware(index) {
-    if (index < 0 || index >= this.middlewares.length) return;
-    return this.middlewares[index];
-  }
-
-  runMiddleware(index, err) {
-    const nextMiddleware = this.getNextMiddleware(index);
-    const next = (err) => this.runMiddleware(index + 1, err);
-
-    if (nextMiddleware.path) {
-      const isMatchPath = this.req.path === nextMiddleware.path;
-      return isMatchPath ? nextMiddleware(this.req, this.res, next) : this.runMiddleware(index + 1);
+  const runMiddleWare = (index, err) => {
+    if (index < 0 || middlewares.length < index) {
+      return;
     }
 
     if (err) {
-      if (this.isErrorMiddleware(nextMiddleware)) {
-        nextMiddleware(err, this.req, this.res, next);
-      }
-      this.runMiddleware(index + 1, err);
+      const isErrorParam = nextMiddleWare.length === 4;
+      return isErrorParam ? nextMiddleWare(err, request, response, next) : runMiddleWare(index + 1, err);
     }
-    nextMiddleware(this.req, this.res, next);
+
+    const nextMiddleWare = middlewares[index];
+    const next = (err) => runMiddleWare(index + 1, err);
+
+    if (nextMiddleWare.path) {
+      const pathMatched = request.url === nextMiddleWare.path &&
+        request.method.toLowerCase() === (nextMiddleWare.method || 'get'); // 기본값 get 설정
+      return pathMatched ? nextMiddleWare(request, response, next) : runMiddleWare(index + 1);
+    }
+    nextMiddleWare(request, response, next);
+  }
+
+
+  return {
+    middlewares,
+    add,
+    run
   }
 }
 
-module.exports = Middleware;
+module.exports = middleware;
