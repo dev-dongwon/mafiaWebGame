@@ -1,12 +1,13 @@
 const http = require('http');
 const Middleware = require('./middleware');
 const response = require('./response');
+const request = require('./request');
 
 const Application = class {
   constructor() {
     this.middleware = new Middleware();
     this.server = http.createServer((req, res) => {
-      this.middleware.run(req, response(res));
+      this.middleware.run(request(req), response(res));
     })
   }
 
