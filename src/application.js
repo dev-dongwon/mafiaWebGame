@@ -5,7 +5,7 @@ const request = require('./request');
 
 const Application = class {
   constructor() {
-    this.middleware = new Middleware();
+    this.middleware = Middleware();
     this.server = http.createServer((req, res) => {
       this.middleware.run(request(req), response(res));
     })
@@ -24,6 +24,18 @@ const Application = class {
       console.error('use(func) 혹은 use(path, func)를 써주세요');
     }
     this.middleware.add(func);
+  }
+
+  get(path, func) {
+    if (!path || !func) throw Error('path and func is required');
+    func.method = 'get';
+    this.use(path, func);
+  }
+
+  post(path, func) {
+    if (!path || !func) throw Error('path and func is required');
+    func.method = 'post';
+    this.use(path, func);
   }
 }
 

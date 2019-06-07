@@ -9,8 +9,8 @@ const app = new App();
 
 app.use(logger());
 app.use(serveStatic());
-app.use('/', index());
-app.use('/join', join());
+app.get('/', index());
+app.get('/join', join());
 app.use(errors.error404());
 app.use(errors.error());
 
