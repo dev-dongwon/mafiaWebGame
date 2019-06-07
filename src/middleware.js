@@ -29,7 +29,7 @@ const Middleware = class {
     const next = (err) => this.runMiddleware(index + 1, err);
 
     if (nextMiddleware.path) {
-      const isMatchPath = this.req.url === nextMiddleware.path;
+      const isMatchPath = this.req.path === nextMiddleware.path;
       return isMatchPath ? nextMiddleware(this.req, this.res, next) : this.runMiddleware(index + 1);
     }
 
