@@ -1,7 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 
-const join = () => (req, res, next) => {
+const getPage = () => (req, res, next) => {
   const publicPath = path.join(__dirname, '../public')
   fs.readFile(`${publicPath}/join.html`, (err, data) => {
     if (err) throw err
@@ -9,4 +9,11 @@ const join = () => (req, res, next) => {
   })
 }
 
-module.exports = join;
+const joinMember = () => {
+
+};
+
+module.exports = {
+  getPage,
+  joinMember
+}
