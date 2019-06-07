@@ -3,11 +3,13 @@ const debug = require('./utils/debug')('app');
 const serveStatic = require('./middlewares/serve-static');
 const logger = require('./middlewares/logger');
 const errors = require('./middlewares/errors');
+const bodyParser = require('./middlewares/body-parser');
 const index = require('./routers/index');
 const join = require('./routers/join');
 const app = new App();
 
 app.use(logger());
+app.use(bodyParser());
 app.use(serveStatic());
 app.get('/', index());
 app.get('/join', join.getPage());
