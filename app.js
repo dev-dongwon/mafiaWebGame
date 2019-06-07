@@ -10,7 +10,7 @@ const app = new App();
 app.use(logger());
 app.use(serveStatic());
 app.get('/', index());
-app.get('/join', join());
+app.get('/join', join.getPage());
 app.use(errors.error404());
 app.use(errors.error());
 
