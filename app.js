@@ -5,14 +5,14 @@ const logger = require('./middlewares/logger');
 const errors = require('./middlewares/errors');
 const bodyParser = require('./middlewares/body-parser');
 const index = require('./routers/index');
-const join = require('./routers/join');
+const join = require('./routers/join/join');
 const app = new App();
 
 app.use(logger());
 app.use(bodyParser());
 app.use(serveStatic());
 app.get('/', index());
-app.get('/join', join.getPage());
+app.get('/join', join());
 app.use(errors.error404());
 app.use(errors.error());
 
