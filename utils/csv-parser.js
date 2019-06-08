@@ -97,9 +97,35 @@ const overwriteCsvData = async (path, data) => {
   }
 }
 
+// 이 방법밖에 없는거니? 비효율적이야
+const objDataToCsv = (objData) => {
+  let dataStr = ``;
+  Object.keys(objData).forEach((key, index) => {
+    if (index+1 === Object.keys(objData).length) {
+      dataStr+=`${key}`
+      return;
+    }
+    dataStr+=`${key},`
+  })
+
+  dataStr+=`\r\n`;
+
+  Object.keys(objData).forEach((key, index) => {
+    if (index+1 === Object.keys(objData).length) {
+      dataStr+=`${objData[key]}`;
+      return;
+    }
+    dataStr+=`${objData[key]},`;
+  })
+  return dataStr;
+}
+
+
 module.exports = {
   getKeyObj,
   getDataObj,
+  overwriteCsvData,
   readCsvData,
   appendCsvData,
+  objDataToCsv
 };
