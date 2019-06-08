@@ -1,10 +1,7 @@
+var qs = require('querystring');
+
 const makeBodyObj = (reqBodyStr) => {
-  return reqBodyStr.split('&').reduce((acc, pair) => {
-    if (!pair) return reqBodyStr;
-    const keyValueArr = pair.split('=');
-    acc[keyValueArr[0]] = keyValueArr[1];
-    return acc;
-  }, {});
+  return qs.parse(reqBodyStr);
 }
 
 const bodyParser = () => (req, res, next) => {
@@ -17,6 +14,7 @@ const bodyParser = () => (req, res, next) => {
   req.on('end', () => {
     const reqBodyStr = Buffer.concat(bodyArr).toString();
     const bodyObj = makeBodyObj(reqBodyStr);
+    console.log(`bodyOBj : ${JSON.stringify(bodyObj)}`)
     req.body = bodyObj;
     next();
   })
