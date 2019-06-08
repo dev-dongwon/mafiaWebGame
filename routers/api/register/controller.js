@@ -23,6 +23,10 @@ const getCryptoPassword = async (password) => {
   }
 }
 
+const updateKey = async (data) => {
+  return await csvParser.overwriteCsvData('./db/key.csv', data);
+}
+
 const registerMember = async (req, res, next) => {
   let {nickname, id, password} = req.body;
   
@@ -37,8 +41,11 @@ const registerMember = async (req, res, next) => {
   const dataStr = `\r\n${keyObj.member},${nickname},${id},${passwordPair.key},${passwordPair.salt}`
   csvParser.appendCsvData('./db/member.csv', dataStr);
 
-  
+  keyObj.member = (keyObj.member*1 + 1);
 
+  // key 업데이트
+  const keyDataStr = await csvParser.objDataToCsv(keyObj);
+  await updateKey(keyDataStr);
 }
 
 module.exports = {
