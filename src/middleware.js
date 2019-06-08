@@ -27,7 +27,8 @@ const middleware = () => {
     const next = (err) => runMiddleWare(index + 1, err);
 
     if (nextMiddleWare.path) {
-      const pathMatched = request.url === nextMiddleWare.path &&
+      console.log(request.path, nextMiddleWare.path)
+      const pathMatched = request.path === nextMiddleWare.path &&
         request.method.toLowerCase() === (nextMiddleWare.method || 'get'); // 기본값 get 설정
       return pathMatched ? nextMiddleWare(request, response, next) : runMiddleWare(index + 1);
     }
