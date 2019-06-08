@@ -16,14 +16,13 @@ const requestObj = {
   request(req){
     if (!req) throw Error('request is required')
     const fullUrlArr = req.url.split('?');
-    req.path = req.path || requestObj.getPath(req);
-
+    req.path = req.path || requestObj.getPath(fullUrlArr);
     if (fullUrlArr.length === 1) return req;
   
     const queries = fullUrlArr[1].split('&');
     const queryObj = requestObj.makeQueryObj(queries);
     req.query = queryObj;
-
+    console.log(req.query)
     return req;
   },
 }
