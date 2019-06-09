@@ -1,4 +1,4 @@
-var qs = require('querystring');
+const qs = require('querystring');
 
 const makeBodyObj = (reqBodyStr) => {
   return qs.parse(reqBodyStr);
@@ -14,7 +14,6 @@ const bodyParser = () => (req, res, next) => {
   req.on('end', () => {
     const reqBodyStr = Buffer.concat(bodyArr).toString();
     const bodyObj = makeBodyObj(reqBodyStr);
-    console.log(`bodyOBj : ${JSON.stringify(bodyObj)}`)
     req.body = bodyObj;
     next();
   })
