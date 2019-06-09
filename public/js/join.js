@@ -1,20 +1,25 @@
-const checkReg = {
-  // 대문자 또는 소문자로 시작하고 5자에서 15자 이하
-  id: /^[A-za-z]{5,15}/g,
-}
-
 let inputIdBox = document.getElementById('inputId');
-
-inputIdBox.addEventListener('keyup', async () => {
+const checkIdAjax = () => inputIdBox.addEventListener('keyup', () => {
   const url = `http://localhost:3000/register/id?value=${inputIdBox.value}`;
   
-  try {
-    const response = await fetch(url);
-    const result = await response.text();
-    document.getElementById('ajax-checkId').innerHTML = result;
-
-  } catch (error) {
-    console.error(error.message);    
+  if (inputIdBox.value.length === 0) {
+    document.getElementById('ajax-checkId').innerHTML = `<p>아이디를 입력해주세요</p>`;
+    document.getElementById('ajax-checkId').style.color = 'red';
+    return;
   }
-  
+
+  setTimeout(async () => {
+    const response = await fetch(url);
+    const ajaxTexst = await response.text();
+    document.getElementById('ajax-checkId').innerHTML = ajaxTexst;
+  }, 500);
+
 })
+
+// todo : 비밀번호 정규표현식 매칭
+
+const registerEvent = () => {
+  checkIdAjax();
+}
+
+registerEvent();
