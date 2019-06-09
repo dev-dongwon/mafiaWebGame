@@ -1,9 +1,11 @@
+const qs = require('querystring');
+
 const requestObj = {
   
   makeQueryObj(queries) {
     return queries.reduce((acc, data) => {
       const keyValueArr = data.split('=');
-      acc[keyValueArr[0]] = keyValueArr[1];
+      acc[keyValueArr[0]] = qs.unescape(keyValueArr[1]);
       return acc;
     },{});
   },
@@ -18,9 +20,10 @@ const requestObj = {
     const fullUrlArr = req.url.split('?');
     req.path = req.path || requestObj.getPath(fullUrlArr);
     if (fullUrlArr.length === 1) return req;
-  
+    
     const queries = fullUrlArr[1].split('&');
     const queryObj = requestObj.makeQueryObj(queries);
+    
     req.query = queryObj;
     console.log(req.query)
     return req;
