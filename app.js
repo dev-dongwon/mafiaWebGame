@@ -6,7 +6,7 @@ const errors = require('./middlewares/errors');
 const bodyParser = require('./middlewares/body-parser');
 const index = require('./routers/index');
 const join = require('./routers/join/join');
-const register = require('./routers/api/register/register');
+const register = require('./routers/register/register');
 const app = new App();
 
 app.use(logger());
