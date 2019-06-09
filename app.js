@@ -6,7 +6,7 @@ const errors = require('./middlewares/errors');
 const bodyParser = require('./middlewares/body-parser');
 const index = require('./routers/index');
 const join = require('./routers/join/join');
-const registerMember = require('./routers/api/register/register');
+const register = require('./routers/api/register/register');
 const app = new App();
 
 app.use(logger());
@@ -14,7 +14,8 @@ app.use(bodyParser());
 app.use(serveStatic());
 app.get('/', index());
 app.get('/join', join());
-app.post('/register', registerMember());
+app.post('/register', register.register());
+app.get('/register/id', register.ajaxIdCheck());
 app.use(errors.error404());
 app.use(errors.error());
 
