@@ -46,7 +46,11 @@ const registerMember = async (req, res, next) => {
   await updateKey(keyDataStr);
 
   // 로그인 페이지로 리다이렉트
-  return res.status(200).send('Location', 'http://localhost:3000')
+  res.writeHead(302, {
+    'Location': 'http://localhost:3000/'
+  });
+  res.end();
+
 }
 
 const isDupleId = async (inputId) => {
