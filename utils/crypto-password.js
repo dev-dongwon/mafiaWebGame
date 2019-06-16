@@ -23,12 +23,12 @@ const checkPass = (dbPass, inputPass, salt) => {
   })
 }
 
-const makeCryptoId = (inputId) => {
+const makeCryptoId = (inputId, salt) => {
   return new Promise((resolve, reject) => {
-    crypto.pbkdf2(inputId, buf.toString('base64'), 100000, 8, 'sha512', (err, key) => {
-      if (err) reject(err);
-      resolve({cryptoId : key.toString('base64') + buf.toString('base64')});
-    });
+      crypto.pbkdf2(inputId, salt, 100000, 8, 'sha512', (err, key) => {
+        if (err) reject(err);
+        resolve(key.toString('base64'));
+      }); 
   })
 }
 
