@@ -7,6 +7,7 @@ const bodyParser = require('./middlewares/body-parser');
 const index = require('./routers/index');
 const join = require('./routers/join/join');
 const register = require('./routers/register/register');
+const login = require('./routers/login/login')
 const app = new App();
 
 app.use(logger());
@@ -16,6 +17,7 @@ app.get('/', index());
 app.get('/join', join());
 app.post('/register', register.register());
 app.get('/register/id', register.ajaxIdCheck());
+app.post('/login', login.login());
 app.use(errors.error404());
 app.use(errors.error());
 
