@@ -17,6 +17,12 @@ const loginController = {
     return member;
   },
 
+  
+  async isValidPassword(member, inputPassword) {
+    const isValidPass = await cryptoPassword.checkPass(member.password, inputPassword, member.salt);
+    return isValidPass;
+  },
+
 }
 
 module.exports = loginController;
