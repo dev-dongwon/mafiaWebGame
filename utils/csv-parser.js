@@ -1,5 +1,4 @@
 const fs = require('fs');
-const path = require('path');
 
 const readFile = (path, encoding = 'utf8') => {
   return new Promise((resolve, reject) => {
@@ -70,6 +69,23 @@ const getDataObj = ({dataKeyArr, dataValueArr}) => {
   },{});
 }
 
+const getMemberObj = ({dataKeyArr, dataValueArr}) => {
+  return dataValueArr.reduce((acc, dataset) => {
+    const obj = {};
+    const dataSetArr = dataset.split(',');
+    const [primaryKey, name, id, password, salt] = dataSetArr;
+
+    dataKeyArr.forEach((key, index) => {
+      if (index !== 2) {
+        obj[key] = dataSetArr[index];
+      }
+    });
+
+    acc[id] = obj;
+    return acc;
+  },{});
+}
+
 const readCsvData = async (path, dataFunc) => {
   try {
     const rawDataArr = await getRawDataArr(path);
@@ -120,10 +136,10 @@ const objDataToCsv = (objData) => {
   return dataStr;
 }
 
-
 module.exports = {
   getKeyObj,
   getDataObj,
+  getMemberObj,
   overwriteCsvData,
   readCsvData,
   appendCsvData,
