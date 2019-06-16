@@ -23,7 +23,17 @@ const checkPass = (dbPass, inputPass, salt) => {
   })
 }
 
+const makeCryptoId = (inputId) => {
+  return new Promise((resolve, reject) => {
+    crypto.pbkdf2(inputId, buf.toString('base64'), 100000, 16, 'sha512', (err, key) => {
+      if (err) reject(err);
+      resolve({cryptoId : key.toString('base64')});
+    });
+  })
+}
+
 module.exports = {
   makeCryptoPass,
-  checkPass
+  checkPass,
+  makeCryptoId,
 }
